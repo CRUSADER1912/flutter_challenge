@@ -13,10 +13,15 @@ class _DetailScreenState extends State<DetailScreen> {
       child: new SafeArea(
         child: new Stack(
           children: <Widget>[
-            new Hero(
-                tag: 'CTO',
-                child: new ImageLoadindWidget(
-                    'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp')),
+            new GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: new Hero(
+                  tag: 'CTO',
+                  child: new ImageLoadindWidget(
+                      'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp')),
+            ),
             new Container(
               height: double.maxFinite,
               child: new Column(
