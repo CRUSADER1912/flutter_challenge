@@ -17,6 +17,34 @@ class _DetailScreenState extends State<DetailScreen> {
                 tag: 'CTO',
                 child: new ImageLoadindWidget(
                     'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp')),
+            new Container(
+              height: double.maxFinite,
+              child: new Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  new Hero(
+                    tag:'button',
+                    child: new ButtonBar(
+                      alignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Image.asset(
+                          'assets/cta_send.png',
+                          scale: 1.5,
+                        ),
+                        new SizedBox(
+                          width: 25.0,
+                        ),
+                        new Image.asset(
+                          'assets/cta_decline.png',
+                          scale: 1.5,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

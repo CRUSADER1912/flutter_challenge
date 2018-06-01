@@ -24,21 +24,24 @@ class _MatchesScreenState extends State<MatchesScreen> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
-                      new ButtonBar(
-                        alignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.asset(
-                            'assets/cta_send.png',
-                            scale: 1.5,
-                          ),
-                          new SizedBox(
-                            width: 25.0,
-                          ),
-                          new Image.asset(
-                            'assets/cta_decline.png',
-                            scale: 1.5,
-                          ),
-                        ],
+                      new Hero(
+                        tag:'button',
+                        child: new ButtonBar(
+                          alignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            new Image.asset(
+                              'assets/cta_send.png',
+                              scale: 1.5,
+                            ),
+                            new SizedBox(
+                              width: 25.0,
+                            ),
+                            new Image.asset(
+                              'assets/cta_decline.png',
+                              scale: 1.5,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
