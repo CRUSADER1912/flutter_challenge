@@ -36,14 +36,26 @@ class ProfileNames extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
-                  new Text(
-                    'Online',
-                    style: new TextStyle(fontSize: 14.0, color: Colors.white),
+                  new SizedBox(
+                    width: 10.0,
                   ),
-                  new Text(
-                    'You & Her',
-                    style: new TextStyle(fontSize: 14.0, color: Colors.white),
-                  )
+                  new ChipText(
+                      new Icon(
+                        Icons.forum,
+                        color: const Color(0xff7fff00),
+                        size: 18.0,
+                      ),
+                      'Online'),
+                  new SizedBox(
+                    width: 10.0,
+                  ),
+                  new ChipText(
+                      new Icon(
+                        Icons.group,
+                        color: Colors.lightBlueAccent,
+                        size: 18.0,
+                      ),
+                      'You & Her'),
                 ],
               ),
               new Row(
@@ -52,8 +64,14 @@ class ProfileNames extends StatelessWidget {
                     "28yrs, 5'2''",
                     style: new TextStyle(fontSize: 14.0, color: Colors.white),
                   ),
-                  new SizedBox(width: 12.0,),
-                  new Icon(Icons.brightness_1, size: 6.0, color: const Color(0xaaffffff),),
+                  new SizedBox(
+                    width: 12.0,
+                  ),
+                  new Icon(
+                    Icons.brightness_1,
+                    size: 6.0,
+                    color: const Color(0xaaffffff),
+                  ),
                   new SizedBox(
                     width: 12.0,
                   ),
@@ -69,8 +87,14 @@ class ProfileNames extends StatelessWidget {
                     "Customer Support",
                     style: new TextStyle(fontSize: 14.0, color: Colors.white),
                   ),
-                  new SizedBox(width: 12.0,),
-                  new Icon(Icons.brightness_1, size: 6.0, color: const Color(0xaaffffff),),
+                  new SizedBox(
+                    width: 12.0,
+                  ),
+                  new Icon(
+                    Icons.brightness_1,
+                    size: 6.0,
+                    color: const Color(0xaaffffff),
+                  ),
                   new SizedBox(
                     width: 12.0,
                   ),
@@ -86,6 +110,41 @@ class ProfileNames extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ChipText extends StatelessWidget {
+  String label;
+  Icon icon;
+
+  ChipText(this.icon, this.label);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      decoration: new BoxDecoration(
+        color: Colors.black26,
+        borderRadius: new BorderRadius.all(new Radius.circular(20.0)),
+      ),
+      child: new Row(
+        children: <Widget>[
+          new SizedBox(
+            width: 5.0,
+          ),
+          icon,
+          new SizedBox(
+            width: 5.0,
+          ),
+          new Text(
+            label,
+            style: new TextStyle(fontSize: 11.0, color: Colors.white),
+          ),
+          new SizedBox(
+            width: 5.0,
+          ),
+        ],
       ),
     );
   }
