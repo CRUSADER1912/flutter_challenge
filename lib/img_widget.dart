@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/custom/fade_in_route.dart';
 import 'package:flutter_app/detail_screen.dart';
 import 'package:flutter_app/image_load_widget.dart';
 
@@ -9,9 +10,9 @@ class ImageWidget extends StatelessWidget {
       children: <Widget>[
         new GestureDetector(
           onTap: () {
-            Navigator.push(context, new MaterialPageRoute(builder: (_) {
+            Navigator.push(context, new FadeInRoute(widget: new DetailScreen()) /*new MaterialPageRoute(builder: (_) {
               return new DetailScreen();
-            }));
+            })*/);
           },
           child: new Center(
             child: new Hero(
