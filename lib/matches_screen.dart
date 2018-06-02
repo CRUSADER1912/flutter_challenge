@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/img_widget.dart';
+import 'package:flutter_app/profileNamesWidget.dart';
 
 class MatchesScreen extends StatefulWidget {
   @override
@@ -18,6 +19,14 @@ class _MatchesScreenState extends State<MatchesScreen> {
             child: new Stack(
               children: <Widget>[
                 new ImageWidget(),
+                new Container(
+                  child: new Column(
+                    children: <Widget>[
+                      new SizedBox(height: 250.0,),
+                      new Hero(tag:'profile_name_widget',child: new ProfileNames()),
+                    ],
+                  ),
+                ),
                 new Container(
                   height: 400.0,
                   child: new Column(

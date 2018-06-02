@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/image_load_widget.dart';
+import 'package:flutter_app/profileNamesWidget.dart';
 
 class DetailScreen extends StatefulWidget {
   @override
@@ -21,6 +22,14 @@ class _DetailScreenState extends State<DetailScreen> {
                   tag: 'CTO',
                   child: new ImageLoadindWidget(
                       'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp',487 / 600),),
+            ),
+            new Container(
+              child: new Column(
+                children: <Widget>[
+                  new SizedBox(height: 340.0,),
+                  new Hero(tag: 'profile_name_widget',child: new ProfileNames()),
+                ],
+              ),
             ),
             new Container(
               height: double.maxFinite,
