@@ -19,7 +19,7 @@ class _MatchesScreenState extends State<MatchesScreen> {
               children: <Widget>[
                 new ImageWidget(),
                 new Container(
-                  height: 345.0,
+                  height: 400.0,
                   child: new Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
