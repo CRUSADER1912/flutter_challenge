@@ -12,24 +12,24 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new LoginPage(),
+      home: new LandingPage(),
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
+class LandingPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => new _LoginPageState();
+  _LandingPageState createState() => new _LandingPageState();
 }
 
-class _LoginPageState extends State<LoginPage>
+class _LandingPageState extends State<LandingPage>
     with SingleTickerProviderStateMixin {
   TabController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = new TabController(length: 3, vsync: this);
+    _controller = new TabController(length: 3, vsync: this, initialIndex: 1);
   }
 
   @override
@@ -45,15 +45,16 @@ class _LoginPageState extends State<LoginPage>
                 new Expanded(child: new Container()),
                 new TabBar(
                   indicatorColor: Colors.white,
+                  isScrollable: true,
                   tabs: <Widget>[
                     new Tab(
-                      icon: new Icon(Icons.search),
+                      text: "Today's (21)",
                     ),
                     new Tab(
-                      icon: new Icon(Icons.accessible),
+                      text: 'My Matches (99+)',
                     ),
                     new Tab(
-                      icon: new Icon(Icons.ac_unit),
+                      text: 'Near Me (99+)',
                     ),
                   ],
                   controller: _controller,
@@ -66,16 +67,12 @@ class _LoginPageState extends State<LoginPage>
       body: new Material(
         child: new TabBarView(
           children: <Widget>[
-            new MatchesScreen(),
             new Icon(Icons.accessible),
+            new MatchesScreen(),
             new Icon(Icons.ac_unit),
           ],
           controller: _controller,
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: () {},
-        child: new Icon(Icons.accessible),
       ),
     );
   }
