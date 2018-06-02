@@ -20,7 +20,7 @@ class _DetailScreenState extends State<DetailScreen> {
               child: new Hero(
                   tag: 'CTO',
                   child: new ImageLoadindWidget(
-                      'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp')),
+                      'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp',487 / 600),),
             ),
             new Container(
               height: double.maxFinite,

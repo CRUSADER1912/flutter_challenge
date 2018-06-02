@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 class ImageLoadindWidget extends StatelessWidget {
 
   String imgUrl;
+  double aspectRatio;
 
-  ImageLoadindWidget(this.imgUrl);
+  ImageLoadindWidget(this.imgUrl, this.aspectRatio);
 
   @override
   Widget build(BuildContext context) {
     return new AspectRatio(
-      aspectRatio: 487 / 451,
+      aspectRatio: aspectRatio,
       child: new Container(
         decoration: new BoxDecoration(
             image: new DecorationImage(
