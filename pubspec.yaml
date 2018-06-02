@@ -27,6 +27,7 @@ flutter:
   assets:
     - assets/cta_send.png
     - assets/cta_decline.png
+    - assets/simran.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

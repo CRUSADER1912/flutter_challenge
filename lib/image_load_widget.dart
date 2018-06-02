@@ -15,7 +15,7 @@ class ImageLoadindWidget extends StatelessWidget {
             image: new DecorationImage(
               fit: BoxFit.fitWidth,
               alignment: FractionalOffset.topCenter,
-              image: new NetworkImage(imgUrl),
+              image: new ExactAssetImage('assets/simran.png'),
             )
         ),
       ),
