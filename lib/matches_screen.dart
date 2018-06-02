@@ -39,14 +39,14 @@ class _MatchesScreenState extends State<MatchesScreen> {
                           alignment: MainAxisAlignment.center,
                           children: <Widget>[
                             new Image.asset(
-                              'assets/cta_send.png',
+                              'assets/cta_decline.png',
                               scale: 1.5,
                             ),
                             new SizedBox(
                               width: 25.0,
                             ),
                             new Image.asset(
-                              'assets/cta_decline.png',
+                              'assets/cta_send.png',
                               scale: 1.5,
                             ),
                           ],
