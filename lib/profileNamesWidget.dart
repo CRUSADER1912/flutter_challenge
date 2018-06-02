@@ -49,11 +49,13 @@ class ProfileNames extends StatelessWidget {
               new Row(
                 children: <Widget>[
                   new Text(
-                    "28yrs,5'2''",
+                    "28yrs, 5'2''",
                     style: new TextStyle(fontSize: 14.0, color: Colors.white),
                   ),
+                  new SizedBox(width: 12.0,),
+                  new Icon(Icons.brightness_1, size: 6.0, color: const Color(0xaaffffff),),
                   new SizedBox(
-                    width: 25.0,
+                    width: 12.0,
                   ),
                   new Text(
                     "Marathi, Hindu",
@@ -67,8 +69,10 @@ class ProfileNames extends StatelessWidget {
                     "Customer Support",
                     style: new TextStyle(fontSize: 14.0, color: Colors.white),
                   ),
+                  new SizedBox(width: 12.0,),
+                  new Icon(Icons.brightness_1, size: 6.0, color: const Color(0xaaffffff),),
                   new SizedBox(
-                    width: 25.0,
+                    width: 12.0,
                   ),
                   new Text(
                     "Bengaluru, India",
