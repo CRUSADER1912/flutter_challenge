@@ -35,22 +35,32 @@ class _LoginPageState extends State<LoginPage>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Login Page'),
-        actions: <Widget>[new Icon(Icons.search)],
-        bottom: new TabBar(
-          tabs: <Widget>[
-            new Tab(
-              icon: new Icon(Icons.search),
+      appBar: new PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: new Container(
+          color: Colors.blue,
+          child: new SafeArea(
+            child: Column(
+              children: <Widget>[
+                new Expanded(child: new Container()),
+                new TabBar(
+                  indicatorColor: Colors.white,
+                  tabs: <Widget>[
+                    new Tab(
+                      icon: new Icon(Icons.search),
+                    ),
+                    new Tab(
+                      icon: new Icon(Icons.accessible),
+                    ),
+                    new Tab(
+                      icon: new Icon(Icons.ac_unit),
+                    ),
+                  ],
+                  controller: _controller,
+                ),
+              ],
             ),
-            new Tab(
-              icon: new Icon(Icons.accessible),
-            ),
-            new Tab(
-              icon: new Icon(Icons.ac_unit),
-            ),
-          ],
-          controller: _controller,
+          ),
         ),
       ),
       body: new Material(
