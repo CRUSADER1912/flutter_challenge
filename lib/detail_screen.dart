@@ -3,7 +3,6 @@ import 'package:flutter_app/image_load_widget.dart';
 import 'package:flutter_app/profileNamesWidget.dart';
 
 class DetailScreen extends StatefulWidget {
-
   int index;
 
   DetailScreen(this.index);
@@ -13,7 +12,6 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-
   int index;
 
   _DetailScreenState(this.index);
@@ -99,26 +97,47 @@ class _DetailScreenState extends State<DetailScreen> {
             new Container(
               height: double.maxFinite,
               child: new Column(
-                mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  new Hero(
-                    tag: 'button$index',
-                    child: new ButtonBar(
-                      alignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        new Image.asset(
-                          'assets/cta_decline.png',
-                          scale: 1.5,
-                        ),
-                        new SizedBox(
-                          width: 25.0,
-                        ),
-                        new Image.asset(
-                          'assets/cta_send.png',
-                          scale: 1.5,
-                        ),
-                      ],
+                  new Container(
+                    decoration: new BoxDecoration(
+                      gradient: new LinearGradient(
+                        // Where the linear gradient begins and ends
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        // Add one stop for each color.
+                        // Stops should increase
+                        // from 0 to 1
+                        stops: [0.1, 0.5, 0.7, 0.9,1.0],
+                        colors: [
+                          // Colors are easy thanks to Flutter's
+                          // Colors class.
+                          const Color(0x00ffffff),
+                          const Color(0xddffffff),
+                          const Color(0xeeffffff),
+                          const Color(0xffffffff),
+                          const Color(0xffffffff),
+                        ],
+                      ),
+                    ),
+                    child: new Hero(
+                      tag: 'button$index',
+                      child: new ButtonBar(
+                        alignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          new Image.asset(
+                            'assets/cta_decline.png',
+                            scale: 1.5,
+                          ),
+                          new SizedBox(
+                            width: 25.0,
+                          ),
+                          new Image.asset(
+                            'assets/cta_send.png',
+                            scale: 1.5,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
