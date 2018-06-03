@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/SampleList.dart';
 import 'package:flutter_app/matches_screen.dart';
 
 void main() => runApp(new MyApp());
@@ -69,7 +70,7 @@ class _LandingPageState extends State<LandingPage>
           children: <Widget>[
             new Icon(Icons.accessible),
             new MatchesScreen(),
-            new Icon(Icons.ac_unit),
+            new ListViewSample(),
           ],
           controller: _controller,
         ),

@@ -4,19 +4,24 @@ import 'package:flutter_app/detail_screen.dart';
 import 'package:flutter_app/image_load_widget.dart';
 
 class ImageWidget extends StatelessWidget {
+
+  int index;
+
+  ImageWidget(this.index);
+
   @override
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
         new GestureDetector(
           onTap: () {
-            Navigator.push(context, new FadeInRoute(widget: new DetailScreen()) /*new MaterialPageRoute(builder: (_) {
+            Navigator.push(context, new FadeInRoute(widget: new DetailScreen(index)) /*new MaterialPageRoute(builder: (_) {
               return new DetailScreen();
             })*/);
           },
           child: new Center(
             child: new Hero(
-              tag: 'CTO',
+              tag: 'CTO$index',
               child: new ImageLoadindWidget(
                   'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp',487 / 540),
             ),

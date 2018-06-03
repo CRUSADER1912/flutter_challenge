@@ -3,11 +3,21 @@ import 'package:flutter_app/image_load_widget.dart';
 import 'package:flutter_app/profileNamesWidget.dart';
 
 class DetailScreen extends StatefulWidget {
+
+  int index;
+
+  DetailScreen(this.index);
+
   @override
-  _DetailScreenState createState() => new _DetailScreenState();
+  _DetailScreenState createState() => new _DetailScreenState(index);
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+
+  int index;
+
+  _DetailScreenState(this.index);
+
   @override
   Widget build(BuildContext context) {
     return new Material(
@@ -19,7 +29,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 Navigator.pop(context);
               },
               child: new Hero(
-                  tag: 'CTO',
+                  tag: 'CTO$index',
                   child: new ImageLoadindWidget(
                       'https://img1.shaadi.com/2017/11/26/7SH00844945-622486-male.webp',487 / 600),),
             ),
@@ -27,7 +37,7 @@ class _DetailScreenState extends State<DetailScreen> {
               child: new Column(
                 children: <Widget>[
                   new SizedBox(height: 340.0,),
-                  new Hero(tag: 'profile_name_widget',child: new ProfileNames()),
+                  new Hero(tag: 'profile_name_widget$index',child: new ProfileNames()),
                 ],
               ),
             ),
@@ -38,7 +48,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   new Hero(
-                    tag:'button',
+                    tag:'button$index',
                     child: new ButtonBar(
                       alignment: MainAxisAlignment.center,
                       children: <Widget>[
