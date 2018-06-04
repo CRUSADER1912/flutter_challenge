@@ -39,7 +39,7 @@ class _LandingPageState extends State<LandingPage>
       appBar: new PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: new Container(
-          color: Colors.blue,
+          color: const Color(0xffff5a60),
           child: new SafeArea(
             child: Column(
               children: <Widget>[
