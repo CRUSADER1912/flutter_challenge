@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/SampleList.dart';
 import 'package:flutter_app/matches_screen.dart';
+import 'package:flutter_app/random_list_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -68,7 +69,7 @@ class _LandingPageState extends State<LandingPage>
       body: new Material(
         child: new TabBarView(
           children: <Widget>[
-            new Icon(Icons.accessible),
+            new RandomListScreen(),
             new MatchesScreen(),
             new ListViewSample(),
           ],
