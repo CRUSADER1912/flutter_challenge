@@ -10,11 +10,11 @@ class Location extends Object with _$LocationSerializerMixin {
    String street;
    String city;
    String state;
-   int postcode;
+   Object postcode;
    Coordinates coordinates;
    Timezone timezone;
 
-   Location(String street, String city, String state, int postcode, Coordinates coordinates, Timezone timezone) {
+   Location(String street, String city, String state, Object postcode, Coordinates coordinates, Timezone timezone) {
     this.street = street;
     this.city = city;
     this.state = state;

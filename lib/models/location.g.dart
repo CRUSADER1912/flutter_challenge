@@ -10,7 +10,7 @@ Location _$LocationFromJson(Map<String, dynamic> json) => new Location(
     json['street'] as String,
     json['city'] as String,
     json['state'] as String,
-    json['postcode'] as int,
+    json['postcode'],
     json['coordinates'] == null
         ? null
         : new Coordinates.fromJson(json['coordinates'] as Map<String, dynamic>),
@@ -22,7 +22,7 @@ abstract class _$LocationSerializerMixin {
   String get street;
   String get city;
   String get state;
-  int get postcode;
+  Object get postcode;
   Coordinates get coordinates;
   Timezone get timezone;
   Map<String, dynamic> toJson() => <String, dynamic>{
