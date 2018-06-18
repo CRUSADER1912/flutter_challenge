@@ -10,27 +10,38 @@ class RandomListScreen extends StatefulWidget {
 }
 
 class _RandomListScreenState extends State<RandomListScreen> {
-  var _futureBuilder = new FutureBuilder(
-      future: _getData(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        switch (snapshot.connectionState) {
-          case ConnectionState.none:
-          case ConnectionState.waiting:
-            return new Center(child: new CircularProgressIndicator());
-          default:
-            if (snapshot.hasError)
-              return new Text('Error: ${snapshot.error}');
-            else
-              return createListView(context, snapshot);
-        }
-      });
+
+  var _futureBuilder;
+
+  @override
+  void initState() {
+    super.initState();
+    _futureBuilder = new FutureBuilder(
+        future: _getData(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.none:
+            case ConnectionState.waiting:
+              return new Center(child: new CircularProgressIndicator());
+            default:
+              if (snapshot.hasError)
+                return new Text('Error: ${snapshot.error}');
+              else
+                return createListView(context, snapshot);
+          }
+        });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
     return _futureBuilder;
   }
 
-  static Future<UserResponseModel> _getData() {
+
+
+   Future<UserResponseModel> _getData() {
     var network_util = new NetworkUtil();
     var uri = new Uri.https('randomuser.me', '/api/', {"results" : "20"});
     return network_util.get(uri).then((dynamic res) {
@@ -38,7 +49,7 @@ class _RandomListScreenState extends State<RandomListScreen> {
     });
   }
 
-  static Widget createListView(BuildContext context, AsyncSnapshot snapshot) {
+   Widget createListView(BuildContext context, AsyncSnapshot snapshot) {
     UserResponseModel model = snapshot.data;
 
     return new ListView.builder(
