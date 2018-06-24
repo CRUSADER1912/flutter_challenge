@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/SampleList.dart';
-import 'package:flutter_app/matches_screen.dart';
-import 'package:flutter_app/random_list_screen.dart';
+import 'package:flutter_app/custom/fade_in_route.dart';
+import 'package:flutter_app/landing_page.dart';
 
 void main() => runApp(new MyApp());
 
@@ -14,66 +13,123 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: new LandingPage(),
+      home: new LoginPage(),
     );
   }
 }
 
-class LandingPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _LandingPageState createState() => new _LandingPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LandingPageState extends State<LandingPage>
-    with SingleTickerProviderStateMixin {
-  TabController _controller;
+class _LoginPageState extends State<LoginPage> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final formKey = GlobalKey<FormState>();
+
+  String _email;
+  String _password;
+
+  final emailController = new TextEditingController();
+  final pwdController = new TextEditingController();
+
+  var focusNode = new FocusNode();
 
   @override
   void initState() {
     super.initState();
-    _controller = new TabController(length: 3, vsync: this, initialIndex: 1);
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the Widget is disposed
+    emailController.dispose();
+    pwdController.dispose();
+    super.dispose();
+  }
+
+  void _submit() {
+    final form = formKey.currentState;
+
+    if (form.validate()) {
+      form.save();
+
+      // Email & password matched our validation rules
+      // and are saved to _email and _password fields.
+      _performLogin();
+    }
+  }
+
+  void _clear() {
+    emailController.clear();
+    pwdController.clear();
+
+    FocusScope.of(context).requestFocus(focusNode);
+  }
+
+  void _performLogin() {
+
+
+
+//    // This is just a demo, so no actual login here.
+//    final snackbar = SnackBar(
+//      content: Text('Email: $_email, password: $_password'),
+//    );
+//
+//    scaffoldKey.currentState.showSnackBar(snackbar);
+
+    Navigator.pushReplacement(context, new FadeInRoute(widget: new LandingPage()) /*new MaterialPageRoute(builder: (_) {
+              return new DetailScreen();
+            })*/);
+
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
-        child: new Container(
-          color: const Color(0xffff5a60),
-          child: new SafeArea(
-            child: Column(
-              children: <Widget>[
-                new Expanded(child: new Container()),
-                new TabBar(
-                  indicatorColor: Colors.white,
-                  isScrollable: true,
-                  tabs: <Widget>[
-                    new Tab(
-                      text: "Today's (21)",
-                    ),
-                    new Tab(
-                      text: 'My Matches (99+)',
-                    ),
-                    new Tab(
-                      text: 'Near Me (99+)',
-                    ),
-                  ],
-                  controller: _controller,
-                ),
-              ],
-            ),
-          ),
-        ),
+    return Scaffold(
+      key: scaffoldKey,
+      appBar: AppBar(
+        title: Text('Shaadi Login'),
       ),
-      body: new Material(
-        child: new TabBarView(
-          children: <Widget>[
-            new RandomListScreen(),
-            new MatchesScreen(),
-            new ListViewSample(),
-          ],
-          controller: _controller,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
+        child: Form(
+          key: formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Email'),
+                validator: (val) =>
+                    !val.contains('@') ? 'Not a valid email.' : null,
+                onSaved: (val) => _email = val,
+                controller: emailController,
+                focusNode: focusNode,
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Password'),
+                validator: (val) => val.isEmpty ? 'Enter valid password' : null,
+                onSaved: (val) => _password = val,
+                obscureText: true,
+                controller: pwdController,
+              ),
+              new SizedBox(
+                height: 5.0,
+              ),
+              new ButtonBar(
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: _submit,
+                    child: new Text('Login'),
+                  ),
+                  RaisedButton(
+                    onPressed: _clear,
+                    child: new Text('Clear'),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
