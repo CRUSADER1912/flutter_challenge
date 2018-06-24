@@ -68,21 +68,21 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _performLogin() {
-
-
-
-//    // This is just a demo, so no actual login here.
-//    final snackbar = SnackBar(
-//      content: Text('Email: $_email, password: $_password'),
-//    );
-//
-//    scaffoldKey.currentState.showSnackBar(snackbar);
-
-    Navigator.pushReplacement(context, new FadeInRoute(widget: new LandingPage()) /*new MaterialPageRoute(builder: (_) {
-              return new DetailScreen();
-            })*/);
-
+    //Make API call here
+    Navigator.pushReplacement(
+        context, new FadeInRoute(widget: new LandingPage()));
   }
+
+//  _saveValues(LoginResponse logindata) async {
+//    SharedPreferences prefs = await SharedPreferences.getInstance();
+//    prefs.setString("memberlogin", logindata.data.memberlogin);
+//    prefs.setString("display_name", logindata.data.displayName);
+//    prefs.setString("username", logindata.data.username);
+//    prefs.setString("email", logindata.data.email);
+//    prefs.setString("mobile", logindata.data.mobile);
+//    prefs.setString("gender", logindata.data.gender);
+//    prefs.setString("abc", logindata.data.abc);
+//  }
 
   @override
   Widget build(BuildContext context) {
