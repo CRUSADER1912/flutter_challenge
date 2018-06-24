@@ -12,12 +12,18 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
         json['data'] == null
             ? null
             : new Data.fromJson(json['data'] as Map<String, dynamic>),
-        json['expdt'] as String);
+        json['expdt'] as String,
+        json['message'] as String);
 
 abstract class _$LoginResponseSerializerMixin {
   String get status;
   Data get data;
   String get expdt;
-  Map<String, dynamic> toJson() =>
-      <String, dynamic>{'status': status, 'data': data, 'expdt': expdt};
+  String get message;
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'status': status,
+        'data': data,
+        'expdt': expdt,
+        'message': message
+      };
 }
