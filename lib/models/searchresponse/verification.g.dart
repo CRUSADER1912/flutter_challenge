@@ -9,9 +9,9 @@ part of 'verification.dart';
 Verification _$VerificationFromJson(Map<String, dynamic> json) =>
     new Verification(
         json['count'] as int,
-        json['shieldState'] as String,
-        json['derivedText'] as String,
-        (json['verifiedProofs'] as List)?.map((e) => e as String)?.toList());
+        json['shield_state'] as String,
+        json['derived_text'] as String,
+        (json['verified_proofs'] as List)?.map((e) => e as String)?.toList());
 
 abstract class _$VerificationSerializerMixin {
   int get count;
@@ -20,8 +20,8 @@ abstract class _$VerificationSerializerMixin {
   List<String> get verifiedProofs;
   Map<String, dynamic> toJson() => <String, dynamic>{
         'count': count,
-        'shieldState': shieldState,
-        'derivedText': derivedText,
-        'verifiedProofs': verifiedProofs
+        'shield_state': shieldState,
+        'derived_text': derivedText,
+        'verified_proofs': verifiedProofs
       };
 }

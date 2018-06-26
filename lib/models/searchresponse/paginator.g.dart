@@ -9,9 +9,9 @@ part of 'paginator.dart';
 Paginator _$PaginatorFromJson(Map<String, dynamic> json) => new Paginator(
     json['key'] as String,
     json['page'] as int,
-    json['limitPerPage'] as int,
-    json['totalCount'] as int,
-    json['nextElementCount'] as int);
+    json['limit_per_page'] as int,
+    json['total_count'] as int,
+    json['next_element_count'] as int);
 
 abstract class _$PaginatorSerializerMixin {
   String get key;
@@ -22,8 +22,8 @@ abstract class _$PaginatorSerializerMixin {
   Map<String, dynamic> toJson() => <String, dynamic>{
         'key': key,
         'page': page,
-        'limitPerPage': limitPerPage,
-        'totalCount': totalCount,
-        'nextElementCount': nextElementCount
+        'limit_per_page': limitPerPage,
+        'total_count': totalCount,
+        'next_element_count': nextElementCount
       };
 }

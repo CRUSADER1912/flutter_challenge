@@ -5,8 +5,11 @@ part 'photodetails.g.dart';
 
 @JsonSerializable()
 class PhotoDetails extends Object with _$PhotoDetailsSerializerMixin {
+  @JsonKey(name: "count")
   int count;
+  @JsonKey(name: "photos")
   List<Photo> photos = null;
+  @JsonKey(name: "status")
   String status;
 
   PhotoDetails(int count, List<Photo> photos, String status) {
@@ -15,7 +18,6 @@ class PhotoDetails extends Object with _$PhotoDetailsSerializerMixin {
     this.status = status;
   }
 
-  factory PhotoDetails.fromJson(Map<String, dynamic> json) => _$PhotoDetailsFromJson(json);
-
-
+  factory PhotoDetails.fromJson(Map<String, dynamic> json) =>
+      _$PhotoDetailsFromJson(json);
 }

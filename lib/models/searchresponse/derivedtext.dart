@@ -6,7 +6,10 @@ part 'derivedtext.g.dart';
 @JsonSerializable()
 class DerivedText extends Object with _$DerivedTextSerializerMixin {
 
+
+  @JsonKey(name: "matching_data")
    MatchingData matchingData;
+  @JsonKey(name: "income")
    String income;
 
    DerivedText(MatchingData matchingData, String income) {

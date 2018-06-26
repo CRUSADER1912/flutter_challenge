@@ -8,13 +8,13 @@ part of 'other.dart';
 
 Other _$OtherFromJson(Map<String, dynamic> json) => new Other(
     json['se'] as String,
-    json['isNameLock'] as String,
-    json['shortlistCount'] as int,
+    json['is_name_lock'] as String,
+    json['shortlist_count'] as int,
     json['ignored'] as String,
-    json['hiddenReason'] as String,
-    json['showHistory'] as String,
-    json['matchTag'] as String,
-    json['maskNewProfile'] as bool);
+    json['hidden_reason'] as String,
+    json['show_history'] as String,
+    json['match_tag'] as String,
+    json['mask_new_profile'] as bool);
 
 abstract class _$OtherSerializerMixin {
   String get se;
@@ -27,12 +27,12 @@ abstract class _$OtherSerializerMixin {
   bool get maskNewProfile;
   Map<String, dynamic> toJson() => <String, dynamic>{
         'se': se,
-        'isNameLock': isNameLock,
-        'shortlistCount': shortlistCount,
+        'is_name_lock': isNameLock,
+        'shortlist_count': shortlistCount,
         'ignored': ignored,
-        'hiddenReason': hiddenReason,
-        'showHistory': showHistory,
-        'matchTag': matchTag,
-        'maskNewProfile': maskNewProfile
+        'hidden_reason': hiddenReason,
+        'show_history': showHistory,
+        'match_tag': matchTag,
+        'mask_new_profile': maskNewProfile
       };
 }

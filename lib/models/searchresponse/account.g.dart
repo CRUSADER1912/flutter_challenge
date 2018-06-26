@@ -8,17 +8,17 @@ part of 'account.dart';
 
 Account _$AccountFromJson(Map<String, dynamic> json) => new Account(
     json['status'] as String,
-    json['lastLoginDate'] as int,
-    json['profileCreated'] as int,
-    json['profileActivated'] as int,
-    json['postedBy'] as String,
+    json['last_login_date'] as int,
+    json['profile_created'] as int,
+    json['profile_activated'] as int,
+    json['posted_by'] as String,
     (json['membership'] as List)?.map((e) => e as String)?.toList(),
-    json['hideTill'] as int,
+    json['hide_till'] as int,
     json['screened'] as String,
     json['hidden'] as String,
-    json['astroProfile'] as String,
+    json['astro_profile'] as String,
     json['memberlogin'] as String,
-    json['membershipTag'] as String);
+    json['membership_tag'] as String);
 
 abstract class _$AccountSerializerMixin {
   String get status;
@@ -35,16 +35,16 @@ abstract class _$AccountSerializerMixin {
   String get membershipTag;
   Map<String, dynamic> toJson() => <String, dynamic>{
         'status': status,
-        'lastLoginDate': lastLoginDate,
-        'profileCreated': profileCreated,
-        'profileActivated': profileActivated,
-        'postedBy': postedBy,
+        'last_login_date': lastLoginDate,
+        'profile_created': profileCreated,
+        'profile_activated': profileActivated,
+        'posted_by': postedBy,
         'membership': membership,
-        'hideTill': hideTill,
+        'hide_till': hideTill,
         'screened': screened,
         'hidden': hidden,
-        'astroProfile': astroProfile,
+        'astro_profile': astroProfile,
         'memberlogin': memberlogin,
-        'membershipTag': membershipTag
+        'membership_tag': membershipTag
       };
 }

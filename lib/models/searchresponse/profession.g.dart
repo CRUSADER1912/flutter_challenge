@@ -9,14 +9,14 @@ part of 'profession.dart';
 Profession _$ProfessionFromJson(Map<String, dynamic> json) => new Profession(
     json['occupation'] as String,
     json['industry'] as String,
-    json['workingWith'] as String,
-    json['incomeOld'] as String,
+    json['working_with'] as String,
+    json['income_old'] as String,
     json['income'] as String,
-    json['incomeCurrency'] as String,
-    json['linkedinEmployerid'] as int,
+    json['income_currency'] as String,
+    json['linkedin_employerid'] as int,
     json['employer'] as String,
-    json['validEmployer'] as String,
-    json['incomeHidden'] as String);
+    json['valid_employer'] as String,
+    json['income_hidden'] as String);
 
 abstract class _$ProfessionSerializerMixin {
   String get occupation;
@@ -32,13 +32,13 @@ abstract class _$ProfessionSerializerMixin {
   Map<String, dynamic> toJson() => <String, dynamic>{
         'occupation': occupation,
         'industry': industry,
-        'workingWith': workingWith,
-        'incomeOld': incomeOld,
+        'working_with': workingWith,
+        'income_old': incomeOld,
         'income': income,
-        'incomeCurrency': incomeCurrency,
-        'linkedinEmployerid': linkedinEmployerid,
+        'income_currency': incomeCurrency,
+        'linkedin_employerid': linkedinEmployerid,
         'employer': employer,
-        'validEmployer': validEmployer,
-        'incomeHidden': incomeHidden
+        'valid_employer': validEmployer,
+        'income_hidden': incomeHidden
       };
 }

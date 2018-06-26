@@ -8,26 +8,26 @@ part of 'miniprofile.dart';
 
 MiniProfile _$MiniProfileFromJson(Map<String, dynamic> json) => new MiniProfile(
     json['username'] as String,
-    json['displayName'] as String,
+    json['display_name'] as String,
     json['hidden'] as String,
-    json['postedBy'] as String,
+    json['posted_by'] as String,
     json['age'] as String,
     json['gender'] as String,
     json['caste'] as String,
     json['religion'] as String,
     json['height'] as int,
     (json['membership'] as List)?.map((e) => e as String)?.toList(),
-    json['motherTongue'] as String,
+    json['mother_tongue'] as String,
     json['country'] as String,
     json['state'] as String,
     json['district'] as String,
     json['memberlogin'] as String,
-    json['residencyStatus'] as String,
-    json['maritalStatus'] as String,
+    json['residency_status'] as String,
+    json['marital_status'] as String,
     json['occupation'] as String,
     json['children'] as String,
-    json['aboutMe'] as String,
-    json['nearestCity'] as String);
+    json['about_me'] as String,
+    json['nearest_city'] as String);
 
 abstract class _$MiniProfileSerializerMixin {
   String get username;
@@ -53,25 +53,25 @@ abstract class _$MiniProfileSerializerMixin {
   String get nearestCity;
   Map<String, dynamic> toJson() => <String, dynamic>{
         'username': username,
-        'displayName': displayName,
+        'display_name': displayName,
         'hidden': hidden,
-        'postedBy': postedBy,
+        'posted_by': postedBy,
         'age': age,
         'gender': gender,
         'caste': caste,
         'religion': religion,
         'height': height,
         'membership': membership,
-        'motherTongue': motherTongue,
+        'mother_tongue': motherTongue,
         'country': country,
         'state': state,
         'district': district,
         'memberlogin': memberlogin,
-        'residencyStatus': residencyStatus,
-        'maritalStatus': maritalStatus,
+        'residency_status': residencyStatus,
+        'marital_status': maritalStatus,
         'occupation': occupation,
         'children': children,
-        'aboutMe': aboutMe,
-        'nearestCity': nearestCity
+        'about_me': aboutMe,
+        'nearest_city': nearestCity
       };
 }

@@ -7,11 +7,11 @@ part of 'chatdetails.dart';
 // **************************************************************************
 
 ChatDetails _$ChatDetailsFromJson(Map<String, dynamic> json) => new ChatDetails(
-    json['chatStatus'] as String,
+    json['chat_status'] as String,
     json['lastonlinestatus'] as String,
-    json['lastonlinestatusTime'] as int,
+    json['lastonlinestatus_time'] as int,
     json['lastonlinetext'] as String,
-    json['iconStatus'] as String,
+    json['icon_status'] as String,
     json['status'] as String);
 
 abstract class _$ChatDetailsSerializerMixin {
@@ -22,11 +22,11 @@ abstract class _$ChatDetailsSerializerMixin {
   String get iconStatus;
   String get status;
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'chatStatus': chatStatus,
+        'chat_status': chatStatus,
         'lastonlinestatus': lastonlinestatus,
-        'lastonlinestatusTime': lastonlinestatusTime,
+        'lastonlinestatus_time': lastonlinestatusTime,
         'lastonlinetext': lastonlinetext,
-        'iconStatus': iconStatus,
+        'icon_status': iconStatus,
         'status': status
       };
 }

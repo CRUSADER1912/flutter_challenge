@@ -8,12 +8,12 @@ part of 'profilefields.dart';
 
 ProfileFields _$ProfileFieldsFromJson(Map<String, dynamic> json) =>
     new ProfileFields(
-        json['dPostedBy'] as String,
-        json['dMembership'] as String,
-        json['isPremium'] as bool,
-        json['isBoldListing'] as bool,
-        json['isNriProfile'] as bool,
-        json['isSaarcProfile'] as bool);
+        json['d_postedBy'] as String,
+        json['d_membership'] as String,
+        json['is_premium'] as bool,
+        json['is_bold_listing'] as bool,
+        json['is_nri_profile'] as bool,
+        json['is_saarc_profile'] as bool);
 
 abstract class _$ProfileFieldsSerializerMixin {
   String get dPostedBy;
@@ -23,11 +23,11 @@ abstract class _$ProfileFieldsSerializerMixin {
   bool get isNriProfile;
   bool get isSaarcProfile;
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'dPostedBy': dPostedBy,
-        'dMembership': dMembership,
-        'isPremium': isPremium,
-        'isBoldListing': isBoldListing,
-        'isNriProfile': isNriProfile,
-        'isSaarcProfile': isSaarcProfile
+        'd_postedBy': dPostedBy,
+        'd_membership': dMembership,
+        'is_premium': isPremium,
+        'is_bold_listing': isBoldListing,
+        'is_nri_profile': isNriProfile,
+        'is_saarc_profile': isSaarcProfile
       };
 }

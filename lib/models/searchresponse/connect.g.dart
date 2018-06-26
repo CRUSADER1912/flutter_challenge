@@ -7,11 +7,11 @@ part of 'connect.dart';
 // **************************************************************************
 
 Connect _$ConnectFromJson(Map<String, dynamic> json) =>
-    new Connect(json['filtered'] as String, json['connectStatus'] as String);
+    new Connect(json['filtered'] as String, json['connect_status'] as String);
 
 abstract class _$ConnectSerializerMixin {
   String get filtered;
   String get connectStatus;
   Map<String, dynamic> toJson() =>
-      <String, dynamic>{'filtered': filtered, 'connectStatus': connectStatus};
+      <String, dynamic>{'filtered': filtered, 'connect_status': connectStatus};
 }

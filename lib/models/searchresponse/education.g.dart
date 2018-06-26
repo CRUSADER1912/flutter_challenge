@@ -8,12 +8,12 @@ part of 'education.dart';
 
 Education _$EducationFromJson(Map<String, dynamic> json) => new Education(
     json['education'] as String,
-    json['educationStream'] as String,
-    json['collegeUniversity'] as String,
-    json['college1'] as String,
-    json['validCollege1'] as String,
-    json['college2'] as String,
-    json['validCollege2'] as String);
+    json['education_stream'] as String,
+    json['college_university'] as String,
+    json['college_1'] as String,
+    json['valid_college_1'] as String,
+    json['college_2'] as String,
+    json['valid_college_2'] as String);
 
 abstract class _$EducationSerializerMixin {
   String get education;
@@ -25,11 +25,11 @@ abstract class _$EducationSerializerMixin {
   String get validCollege2;
   Map<String, dynamic> toJson() => <String, dynamic>{
         'education': education,
-        'educationStream': educationStream,
-        'collegeUniversity': collegeUniversity,
-        'college1': college1,
-        'validCollege1': validCollege1,
-        'college2': college2,
-        'validCollege2': validCollege2
+        'education_stream': educationStream,
+        'college_university': collegeUniversity,
+        'college_1': college1,
+        'valid_college_1': validCollege1,
+        'college_2': college2,
+        'valid_college_2': validCollege2
       };
 }

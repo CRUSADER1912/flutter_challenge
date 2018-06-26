@@ -8,13 +8,13 @@ part of 'matchingdata.dart';
 
 MatchingData _$MatchingDataFromJson(Map<String, dynamic> json) =>
     new MatchingData(
-        json['locationState'] as String, json['mothertongue'] as String);
+        json['location_state'] as String, json['mothertongue'] as String);
 
 abstract class _$MatchingDataSerializerMixin {
-  String get locationState;
   String get mothertongue;
+  String get locationState;
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'locationState': locationState,
-        'mothertongue': mothertongue
+        'mothertongue': mothertongue,
+        'location_state': locationState
       };
 }

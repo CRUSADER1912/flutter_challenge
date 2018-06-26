@@ -1,21 +1,32 @@
-
 import 'package:json_annotation/json_annotation.dart';
 
 part 'account.g.dart';
 
 @JsonSerializable()
-class Account extends Object with _$AccountSerializerMixin{
+class Account extends Object with _$AccountSerializerMixin {
+  @JsonKey(name: "status")
   String status;
+  @JsonKey(name: "last_login_date")
   int lastLoginDate;
+  @JsonKey(name: "profile_created")
   int profileCreated;
+  @JsonKey(name: "profile_activated")
   int profileActivated;
+  @JsonKey(name: "posted_by")
   String postedBy;
+  @JsonKey(name: "membership")
   List<String> membership = null;
+  @JsonKey(name: "hide_till")
   int hideTill;
+  @JsonKey(name: "screened")
   String screened;
+  @JsonKey(name: "hidden")
   String hidden;
+  @JsonKey(name: "astro_profile")
   String astroProfile;
+  @JsonKey(name: "memberlogin")
   String memberlogin;
+  @JsonKey(name: "membership_tag")
   String membershipTag;
 
   Account(
@@ -45,6 +56,6 @@ class Account extends Object with _$AccountSerializerMixin{
     this.membershipTag = membershipTag;
   }
 
-  factory Account.fromJson(Map<String, dynamic> json) => _$AccountFromJson(json);
-
+  factory Account.fromJson(Map<String, dynamic> json) =>
+      _$AccountFromJson(json);
 }

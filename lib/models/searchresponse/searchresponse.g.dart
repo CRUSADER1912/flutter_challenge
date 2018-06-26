@@ -16,7 +16,7 @@ SearchResponse _$SearchResponseFromJson(Map<String, dynamic> json) =>
         json['search'] == null
             ? null
             : new Search.fromJson(json['search'] as Map<String, dynamic>),
-        json['requestCount'] as int,
+        json['request_count'] as int,
         json['paginator'] == null
             ? null
             : new Paginator.fromJson(
@@ -30,7 +30,7 @@ abstract class _$SearchResponseSerializerMixin {
   Map<String, dynamic> toJson() => <String, dynamic>{
         'data': data,
         'search': search,
-        'requestCount': requestCount,
+        'request_count': requestCount,
         'paginator': paginator
       };
 }

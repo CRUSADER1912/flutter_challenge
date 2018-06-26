@@ -9,14 +9,14 @@ part of 'relationshipaction.dart';
 RelationshipActions _$RelationshipActionsFromJson(Map<String, dynamic> json) =>
     new RelationshipActions(
         json['se'] as String,
-        json['contactsStatus'] as String,
-        json['contactstatusTitle'] as String,
-        json['callSms'] as String,
-        json['canCancel'] as bool,
-        json['canSendReminder'] as bool,
-        json['noAction'] as bool,
-        json['maybeAction'] as bool,
-        json['canChat'] as bool);
+        json['contacts_status'] as String,
+        json['contactstatus_title'] as String,
+        json['call_sms'] as String,
+        json['can_cancel'] as bool,
+        json['can_send_reminder'] as bool,
+        json['no_action'] as bool,
+        json['maybe_action'] as bool,
+        json['can_chat'] as bool);
 
 abstract class _$RelationshipActionsSerializerMixin {
   String get se;
@@ -30,13 +30,13 @@ abstract class _$RelationshipActionsSerializerMixin {
   bool get canChat;
   Map<String, dynamic> toJson() => <String, dynamic>{
         'se': se,
-        'contactsStatus': contactsStatus,
-        'contactstatusTitle': contactstatusTitle,
-        'callSms': callSms,
-        'canCancel': canCancel,
-        'canSendReminder': canSendReminder,
-        'noAction': noAction,
-        'maybeAction': maybeAction,
-        'canChat': canChat
+        'contacts_status': contactsStatus,
+        'contactstatus_title': contactstatusTitle,
+        'call_sms': callSms,
+        'can_cancel': canCancel,
+        'can_send_reminder': canSendReminder,
+        'no_action': noAction,
+        'maybe_action': maybeAction,
+        'can_chat': canChat
       };
 }

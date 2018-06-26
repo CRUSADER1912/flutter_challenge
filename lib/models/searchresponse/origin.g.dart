@@ -7,8 +7,8 @@ part of 'origin.dart';
 // **************************************************************************
 
 Origin _$OriginFromJson(Map<String, dynamic> json) => new Origin(
-    (json['grewupIn'] as List)?.map((e) => e as String)?.toList(),
-    json['nativePlace'] as String,
+    (json['grewup_in'] as List)?.map((e) => e as String)?.toList(),
+    json['native_place'] as String,
     json['ethnicity'] as String);
 
 abstract class _$OriginSerializerMixin {
@@ -16,8 +16,8 @@ abstract class _$OriginSerializerMixin {
   String get nativePlace;
   String get ethnicity;
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'grewupIn': grewupIn,
-        'nativePlace': nativePlace,
+        'grewup_in': grewupIn,
+        'native_place': nativePlace,
         'ethnicity': ethnicity
       };
 }
